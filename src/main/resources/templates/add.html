@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/adds" method="post">
+    <table border="1" align="center">
+        <tr>
+            <td>人员姓名</td>
+            <td>
+                <input type="text" name="person_name">
+            </td>
+        </tr>
+        <tr>
+            <td>户口所在地</td>
+            <td>
+                <select name="person_area_id">
+                    <option th:each="e:${session.sele}" th:value="${e.area_id}" th:text="${e.area_name}">
+
+                    </option>
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td>人员年龄</td>
+            <td>
+                <input type="text" name="person_age">
+            </td>
+        </tr>
+        <tr>
+            <td>家庭住址</td>
+            <td>
+                <input type="text" name="person_address">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="添加">
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
